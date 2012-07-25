@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TowerOfHanoi", "TowerOfHanoi\TowerOfHanoi.csproj", "{DC72223B-DA14-4167-AD4B-C015697D3153}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TowerOfHanoi.Tests", "TowerOfHanoi.Tests\TowerOfHanoi.Tests.csproj", "{39099A14-6EE2-4B07-8669-6D253C890C67}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DC72223B-DA14-4167-AD4B-C015697D3153}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC72223B-DA14-4167-AD4B-C015697D3153}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC72223B-DA14-4167-AD4B-C015697D3153}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC72223B-DA14-4167-AD4B-C015697D3153}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39099A14-6EE2-4B07-8669-6D253C890C67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39099A14-6EE2-4B07-8669-6D253C890C67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39099A14-6EE2-4B07-8669-6D253C890C67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39099A14-6EE2-4B07-8669-6D253C890C67}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
