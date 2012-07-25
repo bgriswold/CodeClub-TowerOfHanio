@@ -55,6 +55,49 @@ namespace TowerOfHanoi.Tests
             }
         }
 
+        bool IsPowerOfTwo(int x)
+        {
+            return (x != 0) && ((x & (x - 1)) == 0);
+        }
+
+        [Test]
+        public void GetPattern_1_A()
+        {
+            GetPattern(1).ShouldEqual("A");
+            GetPattern(2).ShouldEqual("ABA");
+            GetPattern(3).ShouldEqual("ABACABA");
+            GetPattern(4).ShouldEqual("ABACABADABACABA");
+        }
+
+        [Test]
+        public void IsPowerOfTwo_0_False()
+        {
+            IsPowerOfTwo(0).ShouldBeFalse();
+            IsPowerOfTwo(1).ShouldBeTrue();
+            IsPowerOfTwo(2).ShouldBeTrue();
+            IsPowerOfTwo(3).ShouldBeFalse();
+            IsPowerOfTwo(4).ShouldBeTrue();
+        }
+
+        private string GetPattern(int diskCount)
+        {
+            //A
+            //ABA
+            //ABACABA
+            //ABACABADABACABA
+            string result = "";
+            var converter = new NumericToAlphaConverter();
+            for (int i = 1; i <= diskCount; i++)
+            {
+                if (IsPowerOfTwo(result.Length + 1))
+                {
+                    var temp = result;
+                    result = temp + converter.ConvertIt(i) + temp;
+                }
+            }
+
+            return result;
+        }
         private void VerifyEnd(Game game, string expected)
         {
             game.Towers.Tower1.Count.ShouldEqual(0);
