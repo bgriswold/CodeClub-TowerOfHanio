@@ -10,7 +10,7 @@ namespace TowerOfHanoi.Tests
         public void MinMoves_DiskCount1_1Moves()
         {
             var game = new Game();
-            var result = game.MinMoves(1);
+            var result = game.PerfectScore(1);
             result.ShouldEqual(1);
         }
         
@@ -18,7 +18,7 @@ namespace TowerOfHanoi.Tests
         public void MinMoves_DiskCount3_7Moves()
         {
             var game = new Game();
-            var result = game.MinMoves(3);
+            var result = game.PerfectScore(3);
             result.ShouldEqual(7);
         }
 
@@ -26,7 +26,7 @@ namespace TowerOfHanoi.Tests
         public void MinMoves_DiskCount5_31Moves()
         {
             var game = new Game();
-            var result = game.MinMoves(5);
+            var result = game.PerfectScore(5);
             result.ShouldEqual(31);
         }
     }

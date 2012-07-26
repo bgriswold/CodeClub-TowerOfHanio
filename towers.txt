@@ -1,0 +1,65 @@
+Towers of Hanoi
+
+3 disks
+
+A3
+B2  
+A2 -1
+C3
+A1 -1
+B3 +1
+A3 -1
+
+4 disks
+
+A2
+B3
+A3 +1
+C2
+A1 +1
+B2 -1
+A2 +1
+D3 
+A3 +1
+B1 -1
+A1 +1
+C3 +1
+A2 +1
+B3 -1
+A3 +1
+
+
+5 disks
+
+A3
+B2
+A2
+C3
+A1
+B3
+A3
+D2
+A2
+B1
+A1
+C2
+A3
+B2
+A2
+E3
+A1
+B3
+A3
+C1
+A2
+B1
+A1
+D3
+A3
+B2
+A2
+C3
+A1
+B3
+A3
+

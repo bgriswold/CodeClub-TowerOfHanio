@@ -7,6 +7,11 @@ namespace TowerOfHanoi
     {
         private readonly Tower[] _towers = { new Tower("Tower 1"), new Tower("Tower 2"), new Tower("Tower 3") };
        
+        public int Count
+        {
+            get { return _towers.Length; }
+        }
+
         public Tower Tower1
         {
             get { return _towers[0]; }
@@ -33,15 +38,12 @@ namespace TowerOfHanoi
         {
             return new TowersEnumerator(this);
         }
-
-        // Implement the GetEnumerator() method:
+        
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
         }
 
-        // Declare the enumerator and implement the IEnumerator 
-        // and IDisposable interfaces
         public class TowersEnumerator : IEnumerator, IDisposable
         {
             int _index;

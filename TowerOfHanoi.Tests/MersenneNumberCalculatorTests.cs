@@ -9,8 +9,8 @@ namespace TowerOfHanoi.Tests
         [Test]
         public void Convert_1_A()
         {
-            var converter = new NumericToAlphaConverter();
-            var actual = converter.ConvertIt(1);
+            var converter = new AlphaNumericConverter();
+            var actual = converter.NumericToAlpha(1);
             actual.ShouldEqual("A");
         }
     }

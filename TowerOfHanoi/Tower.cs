@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace TowerOfHanoi
 {
@@ -17,23 +16,20 @@ namespace TowerOfHanoi
         {
             _name = name;
         }
-
-        public override string ToString()
-        {
-            return _name;
-        }
-
+        
         public void AddDisk(string value)
         {
-            var next = TopDisk();
+            string next = TopDisk();
+
             if (next != null && String.CompareOrdinal(value, TopDisk()) > 0)
             {
                 throw new InvalidOperationException("Only smaller disks can be added to the tower.");
             }
+
             var node = new LinkedListNode<string>(value);
             AddLast(node);
         }
-        
+
         public string TopDisk()
         {
             return Last == null ? null : Last.Value;
@@ -44,6 +40,11 @@ namespace TowerOfHanoi
             LinkedListNode<string> node = Last;
             RemoveLast();
             return node.Value;
+        }
+
+        public override string ToString()
+        {
+            return _name;
         }
     }
 }
