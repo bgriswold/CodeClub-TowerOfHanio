@@ -4,7 +4,7 @@ namespace TowerOfHanoi
     {
         public Tower Find(Game game, Tower tower, StepDirection stepDirection)
         {
-            return stepDirection == StepDirection.Forward 
+            return stepDirection == StepDirection.Right 
                 ? NextTower(game, tower) 
                 : PreviousTower(game, tower);
         }

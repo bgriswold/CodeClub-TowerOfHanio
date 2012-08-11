@@ -2,7 +2,7 @@ namespace TowerOfHanoi
 {
     public enum StepDirection   
     {
-        Forward,
-        Back
+        Right,
+        Left
     }
 }

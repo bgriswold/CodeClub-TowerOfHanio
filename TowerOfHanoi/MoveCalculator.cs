@@ -19,8 +19,8 @@ namespace TowerOfHanoi
                 result = temp + converter.NumericToAlpha(i) + temp;
             }
 
-            var patter = result.ToArray().Select(n => Convert.ToString(n)).ToArray();
-            return patter;
+            var pattern = result.ToArray().Select(n => Convert.ToString(n)).ToArray();
+            return pattern;
         }
 
         public Move GenerateNextMove(Game game, int diskCount, string disk)
@@ -28,21 +28,36 @@ namespace TowerOfHanoi
             var index = new AlphaNumericConverter().AlphaToNumeric(disk);
 
             var move = new Move { Disk = disk };
+        
+            var oddStackPositionStepDirection =
+                StackHasOddNumberOfDisks(diskCount) // If stack has an odd disk count
+                ? StepDirection.Left                // start with move to left
+                : StepDirection.Right;              // else start with move to the right
 
-            if (diskCount % 2 == 0)
-            {
-                move.StepDirection = index % 2 == 0
-                                         ? StepDirection.Back
-                                         : StepDirection.Forward;
-            }
-            else
-            {
-                move.StepDirection = index % 2 == 0
-                                         ? StepDirection.Forward
-                                         : StepDirection.Back;
-            }
-
+            // Disks moves alternate between left and right 
+            move.StepDirection =
+                DiskIsInEvenStackPosition(index)                        
+                ? ReverseStepDirection(oddStackPositionStepDirection)   
+                : oddStackPositionStepDirection;
+            
             return move;
+        }
+
+        private static StepDirection ReverseStepDirection(StepDirection startStepDirection)
+        {
+            return startStepDirection == StepDirection.Right
+                       ? StepDirection.Left
+                       : StepDirection.Right;
+        }
+
+        private static bool DiskIsInEvenStackPosition(int index)
+        {
+            return index % 2 == 0;
+        }
+
+        private static bool StackHasOddNumberOfDisks(int diskCount)
+        {
+            return diskCount % 2 != 0;
         }
     }
 }
